@@ -9,9 +9,25 @@ function writePassword() {
   passwordText.value = password;
 
 }
-// TODO: Create a generate password fucntion
+var upperCase = ["A B C D E F G H I K L M N O P Q R S T V X Y Z"]
+var lowerCase = ["a b c d e f g h i j k l m n o p q r s t u v w x z"]
+var numbers = [0123456789]
+var spxChar = ["!#$%&()*+,-./:;<=>?@[\]^_{|}~"]
+var finalArray = ''
+// Created a generate password function
 // TODO: Write all logic within this function
-function generatePassword(){
+function generatePassword(){ 
+    var upperCaseConfirm =  confirm("Would you like to use capital letters?");
+    var lowerCaseConfirm = confirm("Would you like to use lowercase letters?");
+    var numConfirm = confirm ("Would you like to use numbers?")
+    var spxCharConfirm = confirm ("Would you like to use special characters?")
+
+    confirm("Would you like to use capital letters?"){
+        if upperCaseConfirm ===true{
+
+        }
+        
+    }
 
 }
 // TODO: Create confirms for uppercase, lowercase, numbers, and special characters.
