@@ -14,52 +14,49 @@ function writePassword() {
 // TODO: Write all logic within this function
 function generatePassword(){ 
     // bank of arrays for password characters
-    var charCount = prompt("How many characters do you want your password to be?")
-    var upperCaseConfirm =  confirm("Would you like to use capital letters?");
-    var lowerCaseConfirm = confirm("Would you like to use lowercase letters?");
-    var numConfirm = confirm ("Would you like to use numbers?")
-    var spxCharConfirm = confirm ("Would you like to use special characters?")
-    var upperCase = ["A B C D E F G H I K L M N O P Q R S T V X Y Z"]
-    var lowerCase = ["a b c d e f g h i j k l m n o p q r s t u v w x z"]
-    var numbers = [1234567890]
-    var spxChar = ["!#$%&?@^"]
+    var upperCase = "ABCDEFGHIKLMNOPQRSTVXYZ"
+    var lowerCase = "abcdefghijklmnopqrstuvwxz"
+    var numbers = "1234567890"
+    var spxChar = "!#$%&?@^"
     // final accumulated array and final password with random number
     var finalArray = ''
     var finalPass = ''
-    var randomNum = Math.floor(math.random()*charCount)
 // begin user input chain
-    prompt("How many characters do you want your password to be?")
-        if (charCount>=8 && charCount<=128)
-        console.log(charCount)
-    confirm("Would you like to use uppercase letters?")
+var charCount = prompt("How many characters do you want your password to be? (Must be between 8-128 characters)")
+        while (charCount<8 || charCount>128){
+            alert("You chose poorly. Please enter a valid choice.")
+            charCount = prompt("How many characters do you want your password to be? (Must be between 8-128 characters)")
+        }
+         
+        var upperCaseConfirm =  confirm("Would you like to use capital letters?");
         if (upperCaseConfirm ===true) {
         finalArray = finalArray + upperCase
         console.log(finalArray)
         }
     
-    confirm("Would you like to use lowercase letters?")
+        var lowerCaseConfirm = confirm("Would you like to use lowercase letters?");
         if (lowerCaseConfirm===true){
             finalArray += lowerCase
             console.log(finalArray)
         }
-    confirm("Would you like to use numbers?")
+        var numConfirm = confirm ("Would you like to use numbers?");
         if (numConfirm===true){
             finalArray += numbers
             console.log(finalArray)
         }
-    confirm("Would you like to use special characters?")
+        var spxCharConfirm = confirm ("Would you like to use special characters?");
        if (spxCharConfirm===true){
            finalArray += spxChar
            console.log(finalArray)
        }
     
-    for (let i = 0; i <charCount; i++) {
+    for (var i = 0; i <charCount; i++) {
+        var randomNum = Math.floor(Math.random()*finalArray.length)
            finalPass += finalArray[randomNum]
            console.log(finalArray)
         }
-    return (finalPass)
+    return finalPass
 }
-console.log(password)
 // Created confirms for uppercase, lowercase, numbers, and special characters.
 // Prompt user to ask how many chars they want (8-128)
 // Created conditional to make sure user has chosen at least one type of char
